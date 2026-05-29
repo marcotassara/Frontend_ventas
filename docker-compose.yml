@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend-estatico
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      BACKEND_HOST: ${BACKEND_HOST:-host.docker.internal}
